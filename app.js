@@ -2,12 +2,7 @@ let mat = document.getElementById("mat");
 
 playList = [
     "./video_1.mp4",
-    "./video_2.mp4",
-    "./video_3.mp4",
-    "./video_4.mp4",
-    "./video_5.mp4",
-    "./video_6.mp4",
-    "./video_7.mp4"
+    "./video_2.mp4"
 ]
 
 let track;
