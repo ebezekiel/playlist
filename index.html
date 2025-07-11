@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Playlist</title>
+
+  <script src="./app.js" defer></script>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding-top: 40px;
+    }
+    video {
+      width: 80%;
+      max-width: 800px;
+      border: 2px solid #444;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <h1>
+      TEST PLAYER
+    </h1>
+  </div>
+    <video id="mat" width="640" height="360" controls autoplay>
+      <!-- <source  src= "https://www.youtube.com/embed/ts0mU1_fQVA?si=LpPVbqCeeaLVSZFL" type="url/webm">
+      <source src="Master CSS Clip-Path_ Create Custom Shapes with One Line of Code!.mp4" type="video/mp4">
+      <source src="Superbook - Joseph and Pharaoh's Dream - Season 2 Episode 2 - Full Episode (Official HD Version).mp4" type="video/mp4">
+      Your browser does not support the video tag. -->
+  </video>
+
+  <br><br>
+
+  <!-- <video id="videoPlayer" width="320" height="240" controls autoplay>
+      <source  src= "https://www.youtube.com/embed/ts0mU1_fQVA?si=LpPVbqCeeaLVSZFL" type="url/webm">
+      <source src="Master CSS Clip-Path_ Create Custom Shapes with One Line of Code!.mp4" type="video/mp4">
+      <source src="Superbook - Joseph and Pharaoh's Dream - Season 2 Episode 2 - Full Episode (Official HD Version).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video> -->
+
+
+  <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ts0mU1_fQVA?si=LpPVbqCeeaLVSZFL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+
+  <!-- <video id="mat" controls autoplay></video> -->
+  <!-- <video id="videoPlayer" controls autoplay></video> -->
+
+
+  <!-- <script src ="./app.js" ></script> -->
+
+  
+
+  <script src = "./app.js" >
+    // List of video URLs (can be relative or absolute paths)
+    const videoList = [
+      "./Master CSS Clip-Path_ Create Custom Shapes with One Line of Code!.mp4",
+      "./Superbook - Joseph and Pharaoh's Dream - Season 2 Episode 2 - Full Episode (Official HD Version).mp4",
+      "./The Prince of Egypt - Chariot Race [1080p].mp4",
+      "./THE SIEGE  ｜｜  SHE HAD A DREAM AND HER LIFE BEGAN TO FALL APART  ｜｜  MARTHASPEAKS.mp4"
+    ];
+
+    let currentVideoIndex = 0;
+    const videoPlayer = document.getElementById('videoPlayer');
+
+    // Load and play the first video
+    videoPlayer.src = videoList[currentVideoIndex];
+    videoPlayer.load();
+    // videoPlayer.play();
+
+    // When the current video ends, play the next one
+    videoPlayer.addEventListener('ended', () => {
+      currentVideoIndex++;
+      if (currentVideoIndex < videoList.length) {
+        videoPlayer.src = videoList[currentVideoIndex];
+        videoPlayer.load();
+        videoPlayer.play();
+      } else {
+        console.log("All videos finished.");
+      }
+    });
+
+  </script>
+
+</body>
+</html>
